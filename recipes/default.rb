@@ -1,4 +1,8 @@
 #!/usr/bin/env ruby
+#
+# Cookbook Name:: libyaml
+# Recipe:: default
+#
 
 case node['platform_family']
 when "debian"

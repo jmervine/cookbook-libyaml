@@ -1,4 +1,8 @@
 #!/usr/bin/env ruby
+#
+# Cookbook Name:: libyaml
+# Recipe:: source
+#
 
 # helper method
 # TODO: move out of recipe
