@@ -1,14 +1,16 @@
-# httperf cookbook
+# libyaml cookbook
 
 # Requirements
 
 * [build-essentials](http://community.opscode.com/cookbooks/build-essential)
 * [yum](http://community.opscode.com/cookbooks/yum)
+* [apt](http://community.opscode.com/cookbooks/apt)
 
 
 ## This has been tested on the following:
 
 * CentOS 6.2
+* Ubuntu 10.04.4 LTS (lucid64)
 
 # Usage
 
@@ -21,32 +23,27 @@
         // defaults.
         "build_essential": {},
 
-        // Include autoconf recipe.
-        "run_list": [ "recipe[ruby::source]" ]
+        // Include recipe.
+        // Debian based systems from apt.
+        "run_list": [ "recipe[libyaml]" ]
+
+        // Redhat based systems from source.
+        // - This has been tested on Ubuntu as well and
+        //   should work on all debian based systems.
+        //
+        // "run_list": [ "recipe[libyaml::source]" ]
     }
 
 # Attributes
 
     // file: nodes/host.json
     {
-       "ruby": {
+       "libyaml": {
            // defaults shown here
-           "ruby_version":     "1.9.3-p392",
-           "rubygems_version": "1.8.24",
-           "source_location":  "http://ftp.ruby-lang.org/pub/ruby/1.9",
-
-         /*
-           for 2.0 variants
-           "source_location":  "http://ftp.ruby-lang.org/pub/ruby/2.0",
-
-           for 1.8 variants
-           "source_location":  "http://ftp.ruby-lang.org/pub/ruby/1.8",
-
-           both are untested
-         */
-
-           "source_cache_dir": "/usr/local/src",
-           "destination_dir":  "/usr/local/bin"
+           "version":    "0.1.4",
+           "source_url": "http://pyyaml.org/download/libyaml",
+           "source_dir": "/usr/local/src",
+           "dest_dir":   "/usr/local"
        }
     }
 
