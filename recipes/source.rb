@@ -45,7 +45,7 @@ end
 
 execute "make" do
   cwd "#{src}/yaml-#{ver}"
-  creates "#{src}/yaml-#{rver}/src/parser.o"
+  creates "#{src}/yaml-#{ver}/src/parser.o"
 end
 
 execute "make install" do
