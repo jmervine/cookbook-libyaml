@@ -1,5 +1,13 @@
 # libyaml cookbook
 
+This cookbook can be included using Berkshelf or another library management tool by adding the following:
+
+    # Berkshelf example
+    site "https://api.opscode.com/organizations/rubyops"
+
+    # ... or ...
+    cookbook "COOKBOOK_NAME", git: "git://github.com/rubyops/cookbook-COOKBOOK_NAME.git", branch: "master"
+
 # Requirements
 
 * [build-essentials](http://community.opscode.com/cookbooks/build-essential)
@@ -10,6 +18,7 @@
 ## This has been tested on the following:
 
 * CentOS 6.2
+* CentOS 6.3
 * Ubuntu 10.04.4 LTS (lucid64)
 
 # Usage
